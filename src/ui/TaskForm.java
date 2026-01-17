@@ -37,12 +37,12 @@ public class TaskForm extends JDialog {
         panel.add(txtId);
         panel.add(new JLabel("Task Name:"));
         panel.add(txtName);
-        panel.add(new JLabel("Task Description:"));
+        panel.add(new JLabel("*Task Description:"));
         panel.add(new JScrollPane(txtDesc));
         panel.add(new JLabel("Status:"));
         panel.add(cboStatus);
 
-        JButton btnSave = new JButton("Save Task");
+        JButton btnSave = new JButton("Save");
         btnSave.addActionListener(e -> saveTask());
         add(panel, BorderLayout.CENTER);
         add(btnSave, BorderLayout.SOUTH);
@@ -50,7 +50,7 @@ public class TaskForm extends JDialog {
 
     private void saveTask() {
         if (txtName.getText().trim().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Task name is required");
+            JOptionPane.showMessageDialog(this, "The name task is required");
             return;
         }
         Task task = new Task(
