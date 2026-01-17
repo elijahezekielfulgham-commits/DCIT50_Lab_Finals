@@ -28,9 +28,8 @@ public class MainWindow extends JFrame {
         }, 0);
         table = new JTable(tableModel);
         JScrollPane scrollPane = new JScrollPane(table);
-
-        add(addButton, BorderLayout.NORTH);
         add(scrollPane, BorderLayout.CENTER);
+        add(addButton, BorderLayout.SOUTH);
     }
     private void openForm() {
         if (taskForm == null || !taskForm.isDisplayable()) {
@@ -47,3 +46,4 @@ public class MainWindow extends JFrame {
         }
     }
 }
+
